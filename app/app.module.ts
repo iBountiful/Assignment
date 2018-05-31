@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 //import { FridgeComponent } from './fridge/fridge.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { ItemComponent } from './item/item.component';
+import { FridgeComponent } from './fridge/fridge.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ItemComponent } from './item/item.component';
     AppComponent,
   //  FridgeComponent,
     RecipeComponent,
-    ItemComponent
+    ItemComponent,
+    FridgeComponent
   ],
   imports: [
     BrowserModule,
