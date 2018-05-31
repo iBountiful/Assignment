@@ -41,7 +41,7 @@ export class RecipeComponent implements OnInit {
   selectedItem : recipe = null; //null instead of undefined
                                       //because undefined in JS causes properties
   editItem = null;                                    //to dissapear
-  aArray : Array<recipe>;
+  aArray : Array<item>;
   constructor() { }
 
   ngOnInit() {

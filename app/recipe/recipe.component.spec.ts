@@ -47,11 +47,8 @@ describe('RecipeComponent', () => {
   it("Recipe Edition test", function() {
     let bot1 = new recipe(list, list2, s)
     let bot2 = new recipe(list, list2, s)
-    bot1.edit();
-    bot1.pour(bot2);
-
-    expect(bot1.btWater).toBe(2);
-    expect(bot2.btWater).toBe(3);
+    expect(bot1).toBe(2);
+    expect(bot2).toBe(3);
   });
 
 });
