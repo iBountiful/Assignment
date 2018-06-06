@@ -1,0 +1,62 @@
+<h1>Recipe Management:</h1>
+<!-- For loop example -->
+
+<h2>List of recipe</h2>
+<table>
+  <tr>
+    <th>Ingredients</th>
+    <th>Ingredients</th>
+    <th>Ingredients</th>
+    <th>Instructions</th>
+    <th>Time</th>
+  </tr>
+  <tr *ngFor="let item of example">
+    <td *ngFor="let x of item.ingredients">{{x.name}}</td>
+    <td>{{item.instructions}}</td>
+    <td>{{item.time + "min"}}</td>
+  </tr>
+</table>
+
+ <!-- two way data binding -->
+
+  <h2>New Recipe</h2>
+  <table>
+    <tr *ngFor="let recipe of example; let i = index">{{i + "."}}
+      <td *ngFor="let x of recipe.ingredients">{{x.name}}</td>
+      <td></td>
+    </tr>
+  </table><br>
+
+  <label>Ingredients</label><input type="text" [(ngModel)]="formBinding.ing"><br>
+  <label>Instructions</label><input type="text" [(ngModel)]="formBinding.instructions"><br>
+  <label>Time</label><input type="number" [(ngModel)]="formBinding.time"><br>
+  <input type="button" value="Add" (click)="addRecipe()" value="Add Recipe">
+
+   <!-- selection -->
+
+  <h1>Select Recipe/Ingredients</h1>
+  <table>
+    <tr *ngFor="let r of example; let i = index">
+      <td *ngFor="let x of r.ingredients"(click)="select(x)" class="{{x == selectedItem?'selected':'' }}">{{x.name}}</td>
+      <td></td>
+    </tr>
+  </table><br>
+  <div *ngIf="selectedItem != null">
+       {{selectedItem.name}}
+  </div>
+  <div *ngFor="let x of aArray;">
+       {{x.ingredients}}
+  </div>
+
+  <h2>Recipe creation/editing</h2>
+  <table>
+    <tr *ngFor="let r of example2; let i = index">
+      <td *ngFor="let x of r.ingredients"(click)="edit(x)" class="{{x == selectedItem?'selected':'' }}">{{x.name}}</td>
+      <td></td>
+    </tr>
+  </table><br>
+  <div *ngIf="editItem != null">
+       {{editItem.name}}
+  </div>
+  <label>Change to:</label><input type="text" [(ngModel)]="formBinding.name"><br>
+  <input type="button" (click)="change()" value="Change">
